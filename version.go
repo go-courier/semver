@@ -205,6 +205,10 @@ func (v Version) MarshalText() ([]byte, error) {
 	return []byte(v.String()), nil
 }
 
+func (v *Version) DataType(driver string) string {
+	return "varchar"
+}
+
 func (v *Version) Scan(value interface{}) error {
 	var s string
 	s, _ = value.(string)
